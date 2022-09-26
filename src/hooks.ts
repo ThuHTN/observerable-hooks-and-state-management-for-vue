@@ -36,14 +36,7 @@ export function useSubscription<T>(
   subscribe(subSource$);
 }
 
-interface Reducers<T> {
-  [key: string]: (state: any, payload?: any) => void | any;
-}
-
-export function atom<T>(state: {
-  default: T;
-  reducers?: Reducers<T>;
-}): BehaviorSubject<T> {
+export function atom<T>(state: { default: T }): BehaviorSubject<T> {
   const source$ = new BehaviorSubject(state.default);
 
   return source$;
