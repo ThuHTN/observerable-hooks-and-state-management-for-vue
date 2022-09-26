@@ -42,6 +42,8 @@ export function atom<T>(state: { default: T }): BehaviorSubject<T> {
   return source$;
 }
 
+console.log('test branch')
+
 export function useRecoilState<T>(
   soruce$: BehaviorSubject<T>
 ): [Ref, BehaviorSubject<T> | Subject<T>] {
